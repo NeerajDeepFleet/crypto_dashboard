@@ -12,7 +12,7 @@ export default function SideList() {
     dispatch(portfolioFetch());
   }, []);
   const sideListData = useSelector((state) => state.portfolio);
-  console.log(sideListData)
+  // console.log(sideListData)
 
 
   return (

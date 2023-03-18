@@ -11,7 +11,7 @@ export default function CryptoChart() {
   }, []);
 
   const chartData = useSelector((state) => state.chart);
-  console.log(chartData)
+  // console.log(chartData)
 
   return (
     <div>CryptoChart</div>
