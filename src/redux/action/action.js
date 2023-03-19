@@ -3,9 +3,9 @@ import actionTypes from "./type";
 
 
 //chart
-export const chartFetch = () => {
+export const chartFetch = (coin, intervalValue, targetCurrency) => {
   return (dispatch) => {
-    axios.get('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30')
+    axios.get(`https://api.coingecko.com/api/v3/coins/${coin}/market_chart?vs_currency=${targetCurrency}&days=${intervalValue.day}&interval=${intervalValue.value}`)
       .then(response => {
         const data = response.data
         dispatch({
