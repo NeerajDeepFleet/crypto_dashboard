@@ -85,10 +85,11 @@ export default function CryptoChart() {
 
   const LineChart = () => {
     return (
-      <div>
-        <div>
-          <div className="w-full h-[300px] " >
+      <div >
+        <div className="">
+          <div  >
             <Line
+              className="w-full h-60"
               height={500}
               datasetIdKey="id"
               data={{
@@ -122,13 +123,13 @@ export default function CryptoChart() {
                 color: "white",
                 responsive: true,
                 indexAxis: "x",
-                tension: 0.01,
+                tension: 0.04,
                 scales: {
                   x: {
                     grid: {
                       display: true,
-                      drawBorder: false,
-                      borderDash: [6],
+                      drawBorder: true,
+                      borderDash: [10],
                       border: false,
                     },
                     ticks: {
@@ -137,16 +138,16 @@ export default function CryptoChart() {
                       font: {
                         size: "10px",
                       },
-                      color: "white",
+                      color: "green",
                     },
                   },
                   y: {
                     grid: {
                       border: true,
-                      drawBorder: false,
+                      drawBorder: true,
                     },
                     ticks: {
-                      color: "white"
+                      color: "green"
                     }
                   },
                 },
@@ -156,11 +157,11 @@ export default function CryptoChart() {
                     backgroundColor: "gray",
                   },
                   legend: {
-                    display: true,
+                    display: false,
                     align: "end",
                     labels: {
                       color: "white",
-                      pointStyleWidth: 15,
+                      pointStyleWidth: 12,
                       usePointStyle: true,
                       pointStyle: "circle",
                       padding: 2,
@@ -168,6 +169,9 @@ export default function CryptoChart() {
                   },
                   title: {
                     display: true,
+                  },
+                  datalabels: {
+                    display: false,
                   },
                 },
                 maintainAspectRatio: false,
@@ -240,6 +244,9 @@ export default function CryptoChart() {
                 },
                 title: {
                   display: true,
+                },
+                datalabels: {
+                  display: false,
                 },
               },
               maintainAspectRatio: false,
@@ -336,7 +343,7 @@ export default function CryptoChart() {
         {(data.length === 0 || undefined) ?
           (
             <div>loading......</div>
-          ) : (<div>
+          ) : (<div className="w-10/12 h-64">
             {(chartType === "LineChart") ? (<div><LineChart /></div>) : (<div> <BarChart /></div>)}
           </div>)
         }
