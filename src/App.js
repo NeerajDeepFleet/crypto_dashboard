@@ -8,7 +8,9 @@ import CryptoChart from "./components/CryptoChart";
 function App() {
   return (
     <div >
+      <div className="my-40">
       <CryptoChart />
+      </div>
       <Portfolio />
       <ExchangeRate />
       <SideList />

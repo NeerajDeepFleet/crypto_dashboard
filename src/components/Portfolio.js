@@ -80,7 +80,7 @@ export default function Portfolio() {
                       },
                     },
                     datalabels: {
-                      display: true,
+                      display: false,
                       color: "white",
                       align: "center",
                       padding: {
@@ -94,7 +94,7 @@ export default function Portfolio() {
                           },
                         },
                       },
-                    },
+                    }
                   },
                 }}
               />
