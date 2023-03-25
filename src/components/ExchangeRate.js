@@ -99,6 +99,8 @@ export default function ExchangeRate() {
     }
   }
 
+  
+
 
   return (
     <div>
@@ -111,40 +113,39 @@ export default function ExchangeRate() {
           (
             <div>
               <div > selling Currency </div>
+              
+
               <div>
-                <Dropdown
-                  label=" "
-                  options={dropdownData}
-                  value={coinOne}
-                  onChange={handleCoinOneChange}
-                />
+                <select className="select w-40 max-w-xs select-info" value={coinOne} onChange={handleCoinOneChange}>
+                  {dropdownData.map((option) => (
+                    <option value={option.value}>{option.label}</option>
+                  ))}
+                </select>
               </div>
+
+
+              
+
               <div>
-                <input
-                  type="number"
-                  name="coinOneAmount"
-                  value={coinOneAmount}
-                  onChange={handleCoinOneAmountChange}
-                  placeholder="enter amount"
-                />
+              <input type="number" placeholder="Enter Amount" value={coinOneAmount} onChange={handleCoinOneAmountChange} className="input input-bordered input-info w-full max-w-xs" />
               </div>
+
               <div>Buying Currency </div>
+              
               <div>
-                <Dropdown
-                  label=" "
-                  options={dropdownData}
-                  value={coinTwo}
-                  onChange={handleCoinTwoChange}
-                />
+                <select className="select w-40 max-w-xs select-info" value={coinTwo} onChange={handleCoinTwoChange}>
+                  {dropdownData.map((option) => (
+                    <option value={option.value}>{option.label}</option>
+                  ))}
+                </select>
               </div>
               <div>
                 {coinOneAmount} {coinOne}={price}
                 {coinTwo}
               </div>
               <div>
-                <button type="submit" onClick={ERfunction}>
-                  Exchange
-                </button>
+               <button className="btn btn-outline btn-info"  onClick={ERfunction}>Exchange</button>
+
               </div>
             </div>)}
       </div>

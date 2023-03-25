@@ -13,8 +13,9 @@ function App() {
       </div>
       <Portfolio />
       <ExchangeRate />
+      <div className="my-40">
       <SideList />
-
+      </div>
 
     </ div >
   );

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { chartFetch } from '../redux/action/action';
 import { Line, Bar } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
+import ReactSearchBox from 'react-search-box'
+
 Chart.register(...registerables);
 
 export default function CryptoChart() {
@@ -259,10 +261,56 @@ export default function CryptoChart() {
   }
 
 
+  const searchHandle = (record) => {
+    console.log(record.item.key)
+    setCoin(record.item.key)
+  }
+
+  const searchData=[
+    {
+      key: "bitcoin",
+      value: "Bitcoin",
+    },
+    {
+      key: "ethereum",
+      value: "ethereum",
+    },
+    {
+      key: "litecoin",
+      value: "litecoin",
+    },
+    {
+      key: "ripple",
+      value: "ripple",
+    },
+    {
+      key: "bitcoin-cash",
+      value: "bitcoin-cash",
+    },
+    {
+      key: "tether",
+      value: "tether",
+    }
+  ]
+
 
   return (
+
+   
+
     <div>CryptoChart
       <div >
+
+        <div className="w-5/12">
+        <ReactSearchBox
+        placeholder="Search the Crypto Currency"
+        data={searchData}
+        onSelect={searchHandle}
+        autoFocus
+        leftIcon={<>🎨</>}
+        iconBoxSize="48px"
+      />
+        </div>
 
 
         <div className="btn-group " onChange={handleIntervalChange}>
